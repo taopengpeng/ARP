@@ -386,6 +386,8 @@
 </style>
 
 <style scoped rel="stylesheet/sass" lang="sass">
+	.common-list
+		background-color: #fff
 	.temp-cb
 		font-size: 12px
 		position: absolute

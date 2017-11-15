@@ -258,7 +258,7 @@ html, body {
 
 .main {
 	min-height: 500px;
-    background-color: #fff;
+   /* background-color: #fff;*/
 }
 
 /***************************** Helpers *****************************************/

@@ -199,6 +199,8 @@
 </style>
 
 <style scoped rel="stylesheet/sass" lang="sass">
+	.my-product
+		background-color: #fff
 	.temp-cb
 		font-size: 12px
 		position: absolute

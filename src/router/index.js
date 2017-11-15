@@ -9,6 +9,10 @@ const App = resolve => require(['@/App'], resolve)
 // 通用列表
 const commonList = resolve => require(['../components/view/commonList/commonList.vue'], resolve)
 
+// 项目新建
+const creatProject = resolve => require(['../components/view/creatProject/creatProject.vue'], resolve)
+
+
 // 我的项目
 const myProduct = resolve => require(['../components/view/myProduct/myProduct.vue'], resolve)
 
@@ -25,6 +29,11 @@ export default new Router({
 			component: App,
 			meta: {keepAlive: false, menuId: '01'},
 			children: [
+				{
+					path: '/',
+					component: creatProject,
+					meta: {keepAlive: false, menuId: '01'}
+				},
 				{
 					path: '/my/product',
 					component: myProduct,
