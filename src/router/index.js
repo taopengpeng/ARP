@@ -9,6 +9,10 @@ const App = resolve => require(['@/App'], resolve)
 // 通用列表
 const commonList = resolve => require(['../components/view/commonList/commonList.vue'], resolve)
 
+// 通用列表-2
+const commonListTwo = resolve => require(['../components/view/commonListTwo/commonListTwo.vue'], resolve)
+
+
 // 项目新建
 const creatProject = resolve => require(['../components/view/creatProject/creatProject.vue'], resolve)
 
@@ -43,6 +47,11 @@ export default new Router({
 					path: '/common/list',
 					component: commonList,
 					meta: {keepAlive: false, menuId: '03'}
+				},
+				{
+					path: '/common/list/two',
+					component: commonListTwo,
+					meta: {keepAlive: false, menuId: '04'}
 				}
 			]
 		},
