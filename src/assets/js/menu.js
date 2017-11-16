@@ -17,9 +17,9 @@ export const MENU_LIST = [{
 	link: '/common/list',
 	icon: 'icon-1'
 }, {
-	id: '03',
+	id: '04',
 	name: '财务管理',
-	link: '/individualization/setting',
+	link: '/common/list/two',
 	icon: 'icon-wenjianjia'
 }, {
 	id: '04',
