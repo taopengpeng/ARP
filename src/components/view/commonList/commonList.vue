@@ -49,7 +49,61 @@
 				<el-form-item>
 					<el-button class="m-r-10">清空</el-button>
 					<el-button class="m-r-10" type="primary">查询</el-button>
-					<el-button  type="text">高级<i class="font-size-12 iconfont icon-xiangxia el-icon--right"></i></el-button>
+					<el-button  type="text" @click="senior" :class="{isCheck: checked}">
+						高级<i class="font-size-12 iconfont icon-xiangxia el-icon--right"></i>
+						<transition name="tran-an">
+							<div v-if="checked" class="senior-com el-border-primary">
+								<el-form :inline="true" label-width="50px" onsubmit="return false;">
+									<el-form-item label="性别:">
+										<el-select class="w-71" v-model="params.sex">
+											<el-option
+												v-for="item in options"
+												:key="item.value"
+												:label="item.label"
+												:value="item.value">
+											</el-option>
+										</el-select>
+									</el-form-item>
+									<el-form-item label="学位:">
+										<el-select class="w-71" v-model="params.degree">
+											<el-option
+												v-for="item in degree"
+												:key="item.value"
+												:label="item.label"
+												:value="item.value">
+											</el-option>
+										</el-select>
+									</el-form-item>
+									<el-form-item label="学历:">
+										<el-select class="w-71" v-model="params.education">
+											<el-option
+												v-for="item in education"
+												:key="item.value"
+												:label="item.label"
+												:value="item.value">
+											</el-option>
+										</el-select>
+									</el-form-item>
+									<el-form-item label="状态:">
+										<el-select class="w-100" v-model="params.status">
+											<el-option
+												v-for="item in status"
+												:key="item.value"
+												:label="item.label"
+												:value="item.value">
+											</el-option>
+										</el-select>
+									</el-form-item>
+									<el-form-item>
+										<el-button class="m-r-10">清空</el-button>
+										<el-button class="m-r-10" type="primary">查询</el-button>
+									</el-form-item>
+
+								</el-form>
+							</div>
+						</transition>
+
+					</el-button>
 				</el-form-item>
 
 				<el-form-item class="pull-right">
@@ -169,6 +223,7 @@
 		data: function () {
 			return {
 			    aa: '',
+				checked: false,
 				currentPage: '1',
 				params: {
 				    sex: '1',
@@ -335,6 +390,9 @@
 			}
 		},
 		methods: {
+			senior() {
+				this.checked = !this.checked
+			},
 			handleSizeChange() {
 
 			},
@@ -386,6 +444,43 @@
 </style>
 
 <style scoped rel="stylesheet/sass" lang="sass">
+	.tran-an-enter, .tran-an-leave-to
+		transform: translateY(-10px)
+		opacity: 0
+
+	.tran-an-enter-active
+		transition: all .3s ease
+	.tran-an-leave-active
+		transition: all .3s ease
+
+
+	.senior-com:before
+		position: absolute
+		top: -4px
+		right: 20px
+		content: " "
+		width: 5px
+		height: 5px
+		background-color: #fff
+		border-left: 1px solid #42a5f5
+		border-top: 1px solid #42a5f5
+		transform: rotate(45deg)
+	.senior-com
+		position: absolute
+		right: 0
+		top: 50px
+		padding: 5px
+		background-color: #fff
+		border-style: solid
+		border-width: 1px
+		box-shadow: 0px 0px 5px #bbb
+		border-radius: 3px
+
+	.isCheck
+		position: relative
+		i
+			transition: transform .3s
+			transform: rotate(360deg)
 	.common-list
 		background-color: #fff
 	.temp-cb
@@ -398,6 +493,7 @@
 		cursor: pointer
 	.font-size-12
 		font-size: 12px
+		transform: rotate(180deg)
 	.pagination-com
 		text-align: right
 		margin-top: 20px
