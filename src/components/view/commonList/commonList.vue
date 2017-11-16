@@ -52,7 +52,7 @@
 					<el-button  type="text" @click="senior" :class="{isCheck: checked}">
 						高级<i class="font-size-12 iconfont icon-xiangxia el-icon--right"></i>
 						<transition name="tran-an">
-							<div v-if="checked" class="senior-com el-border-primary">
+							<div v-if="checked" @click.stop class="senior-com el-border-primary">
 								<el-form :inline="true" label-width="50px" onsubmit="return false;">
 									<el-form-item label="性别:">
 										<el-select class="w-71" v-model="params.sex">
@@ -470,6 +470,7 @@
 		right: 0
 		top: 50px
 		padding: 5px
+		z-index: 99
 		background-color: #fff
 		border-style: solid
 		border-width: 1px
