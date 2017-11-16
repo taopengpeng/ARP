@@ -6,6 +6,9 @@ import Router from 'vue-router'
 // App
 const App = resolve => require(['@/App'], resolve)
 
+// 首页
+const home = resolve => require(['../components/view/home/home.vue'], resolve)
+
 // 通用列表
 const commonList = resolve => require(['../components/view/commonList/commonList.vue'], resolve)
 
@@ -15,6 +18,9 @@ const commonListTwo = resolve => require(['../components/view/commonListTwo/comm
 
 // 项目新建
 const creatProject = resolve => require(['../components/view/creatProject/creatProject.vue'], resolve)
+
+// 项目新建-子页面
+const crateChildren = resolve => require(['../components/view/crateChildren/crateChildren.vue'], resolve)
 
 
 // 我的项目
@@ -35,7 +41,7 @@ export default new Router({
 			children: [
 				{
 					path: '/',
-					component: creatProject,
+					component: home,
 					meta: {keepAlive: false, menuId: '01'}
 				},
 				{
@@ -52,6 +58,16 @@ export default new Router({
 					path: '/common/list/two',
 					component: commonListTwo,
 					meta: {keepAlive: false, menuId: '04'}
+				},
+				{
+					path: '/crate/children',
+					component: crateChildren,
+					meta: {keepAlive: false, menuId: '05'}
+				},
+				{
+					path: '/creat/project',
+					component: creatProject,
+					meta: {keepAlive: false, menuId: '06'}
 				}
 			]
 		},

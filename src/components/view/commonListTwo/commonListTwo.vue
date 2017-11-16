@@ -7,7 +7,8 @@
 		<div class="com-select">
 			<el-form :inline="true" label-width="50px" onsubmit="return false;">
 				<el-form-item>
-					<el-button type="primary">新增</el-button>
+					<!--<el-button type="primary">新增</el-button>-->
+					<add-people></add-people>
 					<el-button>删除</el-button>
 					<el-button>下载</el-button>
 				</el-form-item>
@@ -178,12 +179,13 @@
 </template>
 
 <script>
+	import addPeople from './children/addPeople.vue'
 	export default {
 		data: function () {
 			return {
 				aa: '',
 				checked: false,
-				currentPage: '1',
+				currentPage: 1,
 				params: {
 					sex: '1',
 					education: '1',
@@ -352,6 +354,7 @@
 			senior() {
 				this.checked = !this.checked
 			},
+			handleSelectionChange() {},
 			handleSizeChange() {
 
 			},
@@ -362,7 +365,7 @@
 		computed: function () {
 			return {}
 		},
-		compontes: {},
+		components: {addPeople},
 		mounted: function () {
 
 		},

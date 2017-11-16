@@ -10,7 +10,7 @@ import {
 	Dialog, Form, FormItem, RadioGroup, Radio, Button, Popover, Dropdown,
 	DropdownMenu, DropdownItem, DatePicker, TimeSelect, Select, Option, Input, Table,
 	TableColumn, Pagination, Loading, Collapse, CollapseItem, Message, Checkbox,
-	CheckboxGroup, Tabs, TabPane, Col, RadioButton
+	CheckboxGroup, Tabs, TabPane, Col, RadioButton, Tree, Menu, Submenu, MenuItemGroup, MenuItem
 } from 'element-ui'
 
 import '@/assets/css/theme/index.css'
@@ -23,8 +23,8 @@ window.Vue = Vue
 Vue.use(Dialog).use(Form).use(FormItem).use(RadioGroup).use(RadioButton)
 	.use(Radio).use(Button).use(Dropdown).use(DropdownMenu)
 	.use(DropdownItem).use(DatePicker).use(TimeSelect).use(Popover).use(Select)
-	.use(Option).use(Input).use(Table).use(TableColumn).use(Pagination)
-	.use(Loading).use(Collapse).use(CollapseItem).use(Checkbox).use(Tabs).use(TabPane).use(CheckboxGroup).use(Col)
+	.use(Option).use(Input).use(Table).use(TableColumn).use(Pagination).use(Menu).use(Submenu).use(MenuItemGroup).use(MenuItem)
+	.use(Loading).use(Collapse).use(CollapseItem).use(Checkbox).use(Tabs).use(TabPane).use(CheckboxGroup).use(Col).use(Tree)
 Vue.config.productionTip = false
 
 Vue.prototype.$http = Axios

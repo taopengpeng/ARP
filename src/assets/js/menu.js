@@ -22,22 +22,22 @@ export const MENU_LIST = [{
 	link: '/common/list/two',
 	icon: 'icon-wenjianjia'
 }, {
-	id: '04',
+	id: '05',
 	name: '通讯录',
-	link: '/individualization/setting',
+	link: '/crate/children',
 	icon: 'icon-tongxunlu'
 }, {
-	id: '05',
+	id: '06',
 	name: '权限管理',
-	link: '/individualization/setting',
+	link: '/creat/project',
 	icon: 'icon-quanxian'
 }, {
-	id: '06',
+	id: '07',
 	name: '系统管理',
 	link: '/individualization/setting',
 	icon: 'icon-xitong'
 }, {
-	id: '07',
+	id: '08',
 	name: '内容发布',
 	link: '/individualization/setting',
 	icon: 'icon-fabu1'
