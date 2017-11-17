@@ -15,7 +15,6 @@
 			<div class="com-con-body clearfix">
 				<div class="com-con-part pull-left">
 					<el-tree :data="data" highlight-current :props="defaultProps" @node-click="handleNodeClick"></el-tree>
-
 				</div>
 				<div class="com-con-part pull-right">
 					<el-table
