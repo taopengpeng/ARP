@@ -141,10 +141,70 @@
 		</div>
 		<div class="com-bottom clearfix">
 			<div class="com-bottom-left">
-				1
+				<el-tabs type="card" v-model="cordOne">
+					<el-tab-pane name="1">
+						<span slot="label">国家项目（12）</span>
+						<div class="country-pro clearfix">
+							<div class="country-pro-img">
+							</div>
+							<div class="pull-right w-135">
+								<div class="country-pro-data">
+									<span class="country-title el-c-master-lightest">预算总额</span>
+									<p><span>6,800.00</span><span>万元</span></p>
+								</div>
+								<div class="country-pro-data">
+									<span class="country-title el-c-master-lightest">资金到位</span>
+									<p><span>3,000.00</span><span>万元</span></p>
+								</div>
+								<div class="country-pro-data">
+									<span class="country-title el-c-master-lightest">项目执行</span>
+									<p><span>208.75</span><span>万元</span></p>
+								</div>
+							</div>
+
+						</div>
+                      </el-tab-pane>
+					<el-tab-pane name="2" label="中科院项目（8）">中科院项目（8）</el-tab-pane>
+					<el-tab-pane name="3" label="其它项目（22）">其它项目（22）</el-tab-pane>
+				</el-tabs>
 			</div>
 			<div class="com-bottom-con">
-				2
+				<i class="com-icon iconfont icon-gengduo el-c-master-lightest"></i>
+				<el-tabs type="card" v-model="cordTwo">
+					<el-tab-pane name="1">
+						<span slot="label">科研动态</span>
+						科研动态
+					</el-tab-pane>
+					<el-tab-pane name="2" label="学术交流">
+						<div class="learn-com clearfix">
+							<div class="learn-top clearfix">
+								<img src="../../../assets/img/renwu.png" alt="">
+								<div class="learn-top-right">
+									<h4>日本稻盛和夫到访中科院</h4>
+									<span class="el-c-master-lightest">2017-11-12</span>
+									<p class="el-c-master-lightest">11月29日，这个页面写的好烦，这个页面写的好烦，这个页面写的好烦
+									，这个页面写的好烦，这个页面写的好烦
+									</p>
+								</div>
+							</div>
+							<div class="learn-bottom">
+								<p class="clearfix">
+									电子所首次参加珠海会展
+									<span class="el-c-master-lightest">2017-09-11</span>
+								</p>
+								<p class="clearfix">
+									电子所首次参加珠海会展
+									<span class="el-c-master-lightest">2017-09-11</span>
+								</p>
+								<p class="clearfix">
+									电子所首次参加珠海会展
+									<span class="el-c-master-lightest">2017-09-11</span>
+								</p>
+							</div>
+						</div>
+					</el-tab-pane>
+					<el-tab-pane name="3" label="党群动态">党群动态</el-tab-pane>
+				</el-tabs>
 			</div>
 			<div class="com-bottom-right">
 				<i class="com-icon iconfont icon-xitong1 el-c-master-lightest"></i>
@@ -186,7 +246,10 @@
 <script>
 	export default {
 		data() {
-			return {}
+			return {
+				cordOne: '1',
+				cordTwo: '2'
+			}
 		},
 		methods: {},
 		computed: {},
@@ -197,6 +260,51 @@
 	}
 </script>
 <style scoped rel="stylesheet/sass" lang="sass">
+	.learn-bottom
+		p
+			cursor: pointer
+			font-size: 14px
+			span
+				float: right
+	.learn-top
+		display: flex
+		height: 130px
+		img
+			flex: 2
+
+	.w-135
+		width: 135px
+	.learn-top-right
+		flex: 5
+		margin-left: 10px
+		span
+			font-size: 14px
+			display: inline-block
+			margin-top: 5px
+		p
+			font-size: 14px
+	.country-title
+		font-size: 14px
+	.country-pro-data
+		display: inline-block
+		width: 140px
+		margin-bottom: 20px
+		p
+			margin: 5px 0 0 0
+			span:nth-child(1)
+				font-size: 26px
+				font-weight: bold
+			span:nth-child(2)
+				color: #ffa422
+
+	.country-pro-img
+		float: left
+		width: 270px
+		height: 227px
+		background: url(../../../assets/img/tubiao.png) no-repeat
+		background-size: 100% 100%
+	.country-pro
+
 	.icon-zhuanli
 		background: url(../../../assets/img/zhuanli.png) no-repeat
 		background-size: 100% 100%
@@ -235,6 +343,7 @@
 		display: flex
 		flex-wrap: wrap
 		.com-use-body
+			cursor: pointer
 			flex: 1
 			width: 33.3%
 			min-width: 33.3%
@@ -352,12 +461,13 @@
 			width: 160px
 			margin-top: 45px
 			display: inline-block
+			cursor: pointer
 	.com-bottom-right
 		flex: 20.8
 		background-color: #fff
-		position: relative
 		border-radius: 5px
 		box-shadow: 1px 1px 15px #d9d9d9
+		position: relative
 		padding: 10px
 		height: 285px
 	.com-bottom-con
@@ -366,14 +476,18 @@
 		border-radius: 5px
 		box-shadow: 1px 1px 15px #d9d9d9
 		margin-right: 20px
-		height: 305px
+		position: relative
+		padding: 10px
+		height: 285px
 	.com-bottom-left
 		flex: 39.6
 		background-color: #fff
 		border-radius: 5px
 		box-shadow: 1px 1px 15px #d9d9d9
 		margin-right: 20px
-		height: 305px
+		position: relative
+		padding: 10px
+		height: 285px
 	.com-bottom
 		margin-top: 20px
 		width: 100%
