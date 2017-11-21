@@ -26,6 +26,8 @@ const crateChildren = resolve => require(['../components/view/crateChildren/crat
 // 我的项目
 const myProduct = resolve => require(['../components/view/myProduct/myProduct.vue'], resolve)
 
+// 系统管理
+const sysManges = resolve => require(['../components/view/sysmange/sysMange.vue'], resolve)
 
 // 404
 const notFound = resolve => require(['@/components/common/notFound.vue'], resolve)
@@ -68,6 +70,11 @@ export default new Router({
 					path: '/creat/project',
 					component: creatProject,
 					meta: {keepAlive: false, menuId: '06'}
+				},
+				{
+					path: '/individualization/sysMange',
+					component: sysManges,
+					meta: {keepAlive: false, menuId: '07'}
 				}
 			]
 		},

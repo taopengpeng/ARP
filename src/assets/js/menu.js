@@ -34,7 +34,7 @@ export const MENU_LIST = [{
 }, {
 	id: '07',
 	name: '系统管理',
-	link: '/individualization/setting',
+	link: '/individualization/sysMange',
 	icon: 'icon-xitong'
 }, {
 	id: '08',
