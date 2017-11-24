@@ -107,6 +107,7 @@
 				<el-table-column
 					prop="address"
 					align="center"
+					sortable
 					label="出生日期"
 					show-overflow-tooltip>
 				</el-table-column>

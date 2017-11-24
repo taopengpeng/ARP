@@ -147,6 +147,7 @@
 						<el-table-column
 							prop="address"
 							align="center"
+							sortable
 							label="出生日期"
 							show-overflow-tooltip>
 						</el-table-column>
@@ -419,92 +420,102 @@
 	}
 </script>
 <style rel="stylesheet/sass" lang="sass">
-	.font-size-12
-		font-size: 12px
-		transform: rotate(180deg)
-	.el-tree-node__content:hover
-		border-radius: 3px
-	.cell
-		padding: 0 !important
-	.w-71
-		width: 71px
-	.senior-com:before
-		position: absolute
-		top: -4px
-		right: 20px
-		content: " "
-		width: 5px
-		height: 5px
-		background-color: #fff
-		border-left: 1px solid #42a5f5
-		border-top: 1px solid #42a5f5
-		transform: rotate(45deg)
-	.senior-com
-		position: absolute
-		right: 0
-		top: 50px
-		padding: 5px
-		z-index: 99
-		background-color: #fff
-		border-style: solid
-		border-width: 1px
-		box-shadow: 0px 0px 5px #bbb
-		border-radius: 3px
-	.isCheck
-		position: relative
-		i
-			transition: transform .3s
-			transform: rotate(360deg)
-	.bg-ff
-		.el-table__body-wrapper
-			.el-table__row
-				td:nth-last-child(1)
-					.cell
-						visibility: hidden!important
-	.bg-ff
-		.el-table__body-wrapper
-			.el-table__row:hover
-				td:nth-last-child(1)
-					.cell
-						visibility: visible!important
-	.el-tree-node__expand-icon
-		border: none
-		width: 15px
-		height: 15px
-		speak: none
-		font-style: normal
-		font-weight: 400
-		font-variant: normal
-		text-transform: none
-		line-height: 1
-		vertical-align: sub
-		display: inline-block
-		font-size: 25px
-		color: #42a5f5
-		-webkit-font-smoothing: antialiased
-	.el-tree-node__expand-icon
-		background: url("images/jia.png") no-repeat
-	.el-tree-node__expand-icon.expanded
-		background: url("images/jian.png") no-repeat
-	.el-tree-node__expand-icon.expanded
-		transform: rotate(0deg)
-		background: url("images/jian.png") no-repeat
-	.el-tree-node__expand-icon.is-leaf
-		background: url("images/jian.png") no-repeat
-	.is-current
-		background: #f3f3f3
-		color: #42a5f5
-		border-radius: 3px
-	.el-tree
-		padding: 0 5px
-	.el-checkbox__inner
-		width: 12px
-		height: 12px
-	.el-checkbox__inner::after
-		height: 6px
-		left: 2px
-	.el-tree-node__label
-		font-size: 12px
+	.my-product
+		.font-size-12
+			font-size: 12px
+			transform: rotate(180deg)
+		.el-tree-node__content:hover
+			border-radius: 3px
+		.cell
+			padding: 0 !important
+		.w-71
+			width: 71px
+		.senior-com:before
+			position: absolute
+			top: -4px
+			right: 20px
+			content: " "
+			width: 5px
+			height: 5px
+			background-color: #fff
+			border-left: 1px solid #42a5f5
+			border-top: 1px solid #42a5f5
+			transform: rotate(45deg)
+		.senior-com
+			position: absolute
+			right: 0
+			top: 50px
+			padding: 5px
+			z-index: 99
+			background-color: #fff
+			border-style: solid
+			border-width: 1px
+			box-shadow: 0px 0px 5px #bbb
+			border-radius: 3px
+		.isCheck
+			position: relative
+			i
+				transition: transform .3s
+				transform: rotate(360deg)
+		.bg-ff
+			.el-table__body-wrapper
+				.el-table__row
+					td:nth-last-child(1)
+						.cell
+							visibility: hidden!important
+		.bg-ff
+			.el-table__body-wrapper
+				.el-table__row:hover
+					td:nth-last-child(1)
+						.cell
+							visibility: visible!important
+		.el-tree
+			background-color: transparent
+			border: none
+		.el-tree--highlight-current .el-tree-node.is-current > .el-tree-node__content
+			background-color: #e2f1ff
+			color: #42a5f5
+		.el-tree-node__expand-icon
+			position: relative
+			width: 12px
+			height: 12px
+			border: 1px solid #42a5f5
+		.el-tree-node__expand-icon:before
+			position: absolute
+			top: 5px
+			left: 2px
+			content: ' '
+			width: 6px
+			border: 1px solid #42a5f5
+		.el-tree-node__expand-icon:after
+			position: absolute
+			top: 2px
+			left: 5px
+			content: ' '
+			height: 6px
+			border: 1px solid #42a5f5
+		.expanded.el-tree-node__expand-icon
+			transform: rotate(0deg)
+
+		.expanded.el-tree-node__expand-icon:after
+			display: none
+		.is-leaf.el-tree-node__expand-icon:after
+			display: none
+
+		.is-current
+			background: #f3f3f3
+			color: #42a5f5
+			border-radius: 3px
+		.el-tree
+			padding: 0 5px
+		.el-checkbox__inner
+			width: 12px
+			height: 12px
+		.el-checkbox__inner::after
+			height: 6px
+			left: 2px
+		.el-tree-node__label
+			font-size: 12px
 </style>
 
 <style scoped rel="stylesheet/sass" lang="sass">

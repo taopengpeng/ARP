@@ -120,13 +120,14 @@
 			<el-button>下载</el-button>
 		</div>
 
-		<div class="table-com">
+		<div class="table-com" >
 			<el-table
 				ref="multipleTable"
 				:data="tableData3"
 				tooltip-effect="dark"
 				style="width: 100%"
 				align="center"
+				highlight-current-row
 				@selection-change="handleSelectionChange">
 				<el-table-column
 					type="selection"
@@ -147,6 +148,7 @@
 				<el-table-column
 					prop="address"
 					align="center"
+					sortable
 					label="出生日期"
 					show-overflow-tooltip>
 				</el-table-column>
@@ -271,7 +273,7 @@
 				}, {
 					date: '王小虎',
 					name: '男',
-					address: '2016-05-03',
+					address: '2016-05-04',
 					school: '北京大学',
 					education: '大学',
 					degree: '硕士',
@@ -280,7 +282,7 @@
 				}, {
 					date: '王小虎',
 					name: '男',
-					address: '2016-05-03',
+					address: '2016-05-05',
 					school: '北京大学',
 					education: '大学',
 					degree: '硕士',
@@ -289,7 +291,7 @@
 				}, {
 					date: '王小虎',
 					name: '男',
-					address: '2016-05-03',
+					address: '2016-05-06',
 					school: '北京大学',
 					education: '大学',
 					degree: '硕士',
@@ -395,6 +397,9 @@
 			},
 			handleSizeChange() {
 
+			},
+			handleSelectionChange(val) {
+				console.log(val);
 			},
 			handleCurrentChange() {
 

@@ -33,6 +33,7 @@
 				<el-table-column
 					prop="name"
 					align="center"
+					sortable
 					label="开始日期">
 				</el-table-column>
 				<el-table-column

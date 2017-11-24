@@ -158,8 +158,21 @@
 			content: ' '
 			width: 6px
 			border: 1px solid #42a5f5
-		.el-tree-node__expand-icon.expanded
+		.el-tree-node__expand-icon:after
+			position: absolute
+			top: 2px
+			left: 5px
+			content: ' '
+			height: 6px
+			border: 1px solid #42a5f5
+		.expanded.el-tree-node__expand-icon
 			transform: rotate(0deg)
+
+		.expanded.el-tree-node__expand-icon:after
+			display: none
+		.is-leaf.el-tree-node__expand-icon:after
+			display: none
+
 
 		.el-table__body-wrapper
 			.el-table__row
