@@ -22,56 +22,25 @@
 						高级<i class="font-size-12 iconfont icon-xiangxia el-icon--right"></i>
 						<transition name="tran-an">
 							<div v-if="checked" @click.stop class="senior-com el-border-primary">
-								<el-form :inline="true" label-width="50px" onsubmit="return false;">
-									<el-form-item label="性别:">
-										<el-select class="w-71" v-model="params.sex">
-											<el-option
-												v-for="item in options"
-												:key="item.value"
-												:label="item.label"
-												:value="item.value">
-											</el-option>
-										</el-select>
-									</el-form-item>
-									<el-form-item label="学位:">
-										<el-select class="w-71" v-model="params.degree">
-											<el-option
-												v-for="item in degree"
-												:key="item.value"
-												:label="item.label"
-												:value="item.value">
-											</el-option>
-										</el-select>
-									</el-form-item>
-									<el-form-item label="学历:">
-										<el-select class="w-71" v-model="params.education">
-											<el-option
-												v-for="item in education"
-												:key="item.value"
-												:label="item.label"
-												:value="item.value">
-											</el-option>
-										</el-select>
-									</el-form-item>
-									<el-form-item label="状态:">
-										<el-select class="w-100" v-model="params.status">
-											<el-option
-												v-for="item in status"
-												:key="item.value"
-												:label="item.label"
-												:value="item.value">
-											</el-option>
-										</el-select>
-									</el-form-item>
-									<el-form-item>
-										<el-button class="m-r-10">清空</el-button>
-										<el-button class="m-r-10" type="primary">查询</el-button>
-									</el-form-item>
-
-								</el-form>
+								<div class="text-left senior-choose clearfix">
+									<span class="el-c-master-lightest">性别：</span>
+									<p><span  class="isChoose">全部</span><span>男</span><span>女</span></p>
+								</div>
+								<div class="text-left senior-choose clearfix">
+									<span class="el-c-master-lightest">年龄：</span>
+									<p><span  class="isChoose">全部</span><span class="isChoose">20及以下</span><span>21-25</span><span>26-30</span><span>31-35</span><span>36-40</span><span class="isChoose">40及以上</span></p>
+								</div>
+								<div class="text-left senior-choose clearfix">
+									<span class="el-c-master-lightest">学历：</span>
+									<p><span>全部</span><span class="isChoose">高中</span><span>大专</span><span>大学</span><span>研究生</span></p>
+								</div>
+								<div class="text-left senior-choose clearfix">
+									<span class="el-c-master-lightest">状态：</span>
+									<p><span  class="isChoose">全部</span><span class="isChoose">待审核</span><span>已退回</span><span>已通过</span></p>
+								</div>
+								<span class="up-icon iconfont icon-down-trangle" @click="senior"></span>
 							</div>
 						</transition>
-
 					</el-button>
 				</el-form-item>
 			</el-form>
@@ -407,6 +376,43 @@
 </style>
 
 <style scoped rel="stylesheet/sass" lang="sass">
+	.up-icon
+		position: absolute
+		bottom: 0
+		left: 50%
+		margin-left: -24px
+		color: #42a5f5
+		/*height: 15px*/
+		width: 48px
+		border-bottom: 15px solid #eff2f7
+		border-left: 15px solid transparent
+		border-right: 15px solid transparent
+
+	span.up-icon::before
+		position: absolute
+		left: 16px
+		bottom: -15px
+	.isChoose
+		background-color: #42a5f5
+		color: #fff
+
+	.senior-choose
+		font-size: 14px
+		color: #000
+		padding: 7px 0
+		>span
+			float: left
+			padding: 5px 10px
+			margin-right: 10px
+		p
+			float: left
+			margin: 0
+			span
+				display: inline-block
+				border-radius: 3px
+				padding: 5px 10px
+				margin-right: 10px
+
 	.del-com
 		background-color: #fb8137
 		color: #fff
@@ -439,7 +445,9 @@
 		right: 0
 		top: 50px
 		z-index: 99
-		padding: 5px
+		padding: 15px
+		width: 610px
+		height: 155px
 		background-color: #fff
 		border-style: solid
 		border-width: 1px

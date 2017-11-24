@@ -1,5 +1,6 @@
 <template>
 	<div class="com-home">
+		<menu-children></menu-children>
 		<div class="com-top clearfix">
 			<div class="com-top-left">
 				<div class="com-top-left-top">
@@ -244,6 +245,7 @@
 </template>
 
 <script>
+	import menuChildren from './children/menuChildren.vue'
 	export default {
 		data() {
 			return {
@@ -253,7 +255,7 @@
 		},
 		methods: {},
 		computed: {},
-		components: {},
+		components: {menuChildren},
 		created() {
 
 		}
@@ -537,4 +539,5 @@
 		display: flex
 	.com-home
 		width: 100%
+		position: relative
 </style>
